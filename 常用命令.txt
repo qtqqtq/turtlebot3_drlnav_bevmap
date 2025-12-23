@@ -1,0 +1,7 @@
+sudo docker run -it --gpus all --privileged   --env NVIDIA_VISIBLE_DEVICES=all   --env NVIDIA_DRIVER_CAPABILITIES=all  --env DISPLAY=${DISPLAY}  --env QT_X11_NO_MITSHM=1  --volume /tmp/.X11-unix:/tmp/.X11-unix -v /home/qtqqtq/disk1/turtlebot3_drlnav:/home/turtlebot3_drlnav   --network host --name=drl_env turtlebot3_drlnav
+
+sudo docker start drl_env
+
+sudo docker exec -it drl_env /bin/bash
+
+ros2 service call /gazebo_2d_map_plugin/generate_map std_srvs/srv/Empty

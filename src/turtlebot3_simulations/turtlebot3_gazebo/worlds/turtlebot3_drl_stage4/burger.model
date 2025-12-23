@@ -77,5 +77,15 @@
       <uri>model://turtlebot3_burger</uri>
     </include>
 
+    <plugin name='gazebo_occupancy_map' filename='libgazebo_ros_2d_map.so'>
+      <map_resolution>0.02</map_resolution>
+      <map_z>0.2</map_z>
+      <map_size_x>10</map_size_x>
+      <map_size_y>10</map_size_y>
+      <init_robot_x>0</init_robot_x>
+      <init_robot_y>0</init_robot_y>
+      <init_robot_theta>6.28</init_robot_theta>
+    </plugin>
+
   </world>
 </sdf>

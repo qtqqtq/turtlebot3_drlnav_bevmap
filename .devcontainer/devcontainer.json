@@ -1,0 +1,28 @@
+{
+  "name": "drl_env (turtlebot3)",
+
+  "image": "turtlebot3_drlnav",
+
+  "workspaceFolder": "/home/turtlebot3_drlnav",
+
+  "workspaceMount": "source=/home/qtqqtq/disk1/turtlebot3_drlnav,target=/home/turtlebot3_drlnav,type=bind",
+
+  "runArgs": [
+    "--gpus", "all",
+    "--privileged",
+    "--network", "host"
+  ],
+
+  "containerEnv": {
+    "NVIDIA_VISIBLE_DEVICES": "all",
+    "NVIDIA_DRIVER_CAPABILITIES": "all",
+    "DISPLAY": "${localEnv:DISPLAY}",
+    "QT_X11_NO_MITSHM": "1"
+  },
+
+  "mounts": [
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
+  ],
+
+  "remoteUser": "root"
+}
